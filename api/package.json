@@ -1,0 +1,14 @@
+{
+  "name": "personal-portfolio-api",
+  "version": "1.0.0",
+  "description": "Backend API for personal portfolio contact form",
+  "main": "api/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node api/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "mongodb": "^6.3.0"
+  }
+}

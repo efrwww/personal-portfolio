@@ -1,0 +1,491 @@
+/* 个人介绍页面样式 */
+.about {
+  padding: 100px 0;
+  background: #0A0A12;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Video Background */
+.about-video-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.about-video.loaded {
+  opacity: 1;
+}
+
+.about-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 18, 0.7) 0%,
+    rgba(10, 10, 18, 0.6) 30%,
+    rgba(10, 10, 18, 0.7) 60%,
+    rgba(10, 10, 18, 0.85) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Dark overlay - 页面内容滑入后自动变暗 */
+.about-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 18, 0.4);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.about-dark-overlay.visible {
+  opacity: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header - Title Animation - 放在个人介绍下方 */
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+  min-height: auto;
+  padding-top: 20px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -1px;
+  position: relative;
+  height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-text {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Slogan animation - 模糊到清晰 */
+.title-slogan {
+  filter: blur(12px);
+  transform: scale(1.1);
+  animation: blurToClear 1.5s ease forwards;
+}
+
+.section-title.animating .title-slogan {
+  animation: blurToClear 1.5s ease forwards, fadeOutSlogan 0.1s ease 1.5s forwards;
+}
+
+.section-title.done .title-slogan,
+.section-title.idle .title-slogan {
+  animation: none;
+  opacity: 0;
+  filter: blur(12px);
+  transform: scale(1.1);
+}
+
+/* Label animation - 渐入 */
+.title-label {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.section-title.done .title-label {
+  animation: slideInLabel 0.3s ease forwards;
+}
+
+@keyframes blurToClear {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOutSlogan {
+  to {
+    opacity: 0;
+    transform: translateY(-10px) scale(1.05);
+    filter: blur(4px);
+  }
+}
+
+@keyframes slideInLabel {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main Content - 页面内容滑入 */
+.about-content {
+  opacity: 0;
+  transform: translateY(40px);
+  padding-bottom: 40px;
+}
+
+.about-content.visible {
+  animation: slideInContent 0.6s ease forwards;
+}
+
+@keyframes slideInContent {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Particle Effect */
+.particle-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(135deg, #4ADE80, #22D3EE, #A78BFA, #F472B6);
+  border-radius: 50%;
+  opacity: 0;
+  left: calc(-10px + var(--i) * 6%);
+  animation: particleFloat 3s ease-in-out calc(var(--i) * 0.1s) infinite;
+}
+
+.about-content.visible .particle {
+  animation: particleEnter 1s ease forwards calc(var(--i) * 0.05s);
+}
+
+@keyframes particleEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(-100px) scale(1);
+  }
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.8;
+  }
+}
+
+/* Top Row - Avatar & Bio */
+.about-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+  margin-bottom: -80px;
+}
+
+/* Avatar Section */
+.avatar-section {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.avatar-glow {
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(ellipse at center, rgba(74, 222, 128, 0.2) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+.avatar-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 24px;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Rainbow Line */
+.rainbow-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #FF6B6B, #FFA07A, #FFD93D, #6BCB77, #4D96FF, #9B59B6, #FF6B6B
+  );
+  background-size: 200% 100%;
+  border-radius: 2px;
+  animation: rainbowFlow 3s linear infinite;
+}
+
+.avatar-wrapper .rainbow-line {
+  display: none;
+}
+
+@keyframes rainbowFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Bio Section */
+.bio-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Bio Card */
+.bio-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.bio-card .rainbow-line {
+  top: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.bio-card h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.bio-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.bio-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Quick Stats */
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(74, 222, 128, 0.05);
+  border-color: rgba(74, 222, 128, 0.15);
+  transform: translateY(-3px);
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4ADE80;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Category Navigation Cards */
+.category-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 120px;
+}
+
+.category-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  background: rgba(74, 222, 128, 0.08);
+  border-color: rgba(74, 222, 128, 0.25);
+  transform: translateY(-3px);
+}
+
+.category-label {
+  flex: 1;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.category-arrow {
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.category-card:hover .category-arrow {
+  color: #4ADE80;
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .about-header {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .about-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 0;
+  }
+
+  .avatar-section {
+    justify-content: flex-start;
+  }
+
+  .avatar-wrapper,
+  .bio-section {
+    max-width: 100%;
+  }
+
+  .bio-card {
+    max-width: 100%;
+  }
+
+  .category-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .about-header {
+    margin-bottom: 40px;
+    min-height: auto;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .about-top {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .avatar-section {
+    order: -1;
+    justify-content: center;
+  }
+
+  .avatar-wrapper {
+    max-width: 280px;
+  }
+
+  .bio-section {
+    max-width: 280px;
+    width: 100%;
+  }
+
+  .bio-card {
+    padding: 28px;
+    max-width: 280px;
+  }
+
+  .bio-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}

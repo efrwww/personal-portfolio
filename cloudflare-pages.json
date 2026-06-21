@@ -1,0 +1,9 @@
+{
+  "name": "aura-portfolio",
+  "version": "1.0.0",
+  "description": "AURA Personal Portfolio - Photography, AIGC, AI Music, Teaching",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "staticFilesFolder": "public",
+  "compatibilityFlags": ["nodejs_compat"]
+}
