@@ -1,0 +1,184 @@
+/* 全局样式与变量定义 - 简约清新风格 */
+:root {
+  /* 主色调 - 参考图配色 */
+  --primary: #4ADE80;
+  --primary-light: #86EFAC;
+  --primary-dark: #22C55E;
+
+  /* 背景色 */
+  --bg-dark: #0A0A12;
+  --bg-medium: #12121A;
+  --bg-light: #1A1A24;
+  --bg-card: rgba(255, 255, 255, 0.03);
+
+  /* 文字颜色 */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+
+  /* 渐变色 */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(74, 222, 128, 0.15) 0%, transparent 70%);
+
+  /* 字体 */
+  --font-display: 'Noto Serif SC', serif;
+  --font-body: 'Noto Sans SC', sans-serif;
+
+  /* 间距 */
+  --container-width: 1400px;
+  --section-padding: 100px;
+
+  /* 动画 */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 容器 */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* 通用标题样式 */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 500px;
+}
+
+/* 渐变文字 */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 发光效果 */
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: var(--gradient-glow);
+  z-index: -1;
+  filter: blur(40px);
+  opacity: 0.5;
+}
+
+/* 卡片基础样式 */
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* 动画关键帧 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* 延迟动画 */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
