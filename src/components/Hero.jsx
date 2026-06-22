@@ -4,6 +4,7 @@ import DotField from './DotField'
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const videoRef = useRef(null)
 
   useEffect(() => {
@@ -12,6 +13,7 @@ const Hero = () => {
   }, [])
 
   const scrollTo = (id) => {
+    setMenuOpen(false)
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -46,11 +48,20 @@ const Hero = () => {
       />
 
       {/* Navigation */}
-      <nav className="hero-nav">
+      <nav className={`hero-nav ${menuOpen ? 'menu-open' : ''}`}>
         <div className="nav-container">
           <div className="nav-logo">
             <span>AURA</span>
           </div>
+          <button
+            className={`hamburger-btn ${menuOpen ? "active" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "close" : "menu"}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div className="nav-links">
             <a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollTo('about'); }}>个人介绍</a>
             <a href="#portfolio" className="nav-link" onClick={(e) => { e.preventDefault(); scrollTo('portfolio'); }}>作品合集</a>
@@ -60,6 +71,14 @@ const Hero = () => {
           <div className="nav-cta" onClick={() => scrollTo('contact')}>
             加入我们
           </div>
+        </div>
+        <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)}></div>
+        <div className="mobile-menu-panel">
+          <a href="#about" className="mobile-nav-link" onClick={(e) => { e.preventDefault(); scrollTo("about"); }}>个人介绍</a>
+          <a href="#portfolio" className="mobile-nav-link" onClick={(e) => { e.preventDefault(); scrollTo("portfolio"); }}>作品合集</a>
+          <a href="#projects" className="mobile-nav-link" onClick={(e) => { e.preventDefault(); scrollTo("projects"); }}>三下乡项目</a>
+          <a href="#benefits" className="mobile-nav-link" onClick={(e) => { e.preventDefault(); scrollTo("benefits"); }}>你的收获</a>
+          <button className="mobile-nav-cta" onClick={() => scrollTo("contact")}>加入我们</button>
         </div>
       </nav>
 

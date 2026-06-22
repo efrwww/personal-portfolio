@@ -410,6 +410,87 @@
   right: -100px;
 }
 
+
+@media (max-width: 1024px) {
+  .skills .container {
+    padding: 0 32px;
+  }
+  .video-cards {
+    gap: 16px;
+  }
+  .play-button {
+    width: 56px;
+    height: 56px;
+  }
+  .music-video-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .social-image {
+    max-width: 100%;
+  }
+  .music-info h3 {
+    font-size: 1.2rem;
+  }
+  .music-info p {
+    font-size: 0.85rem;
+  }
+  .video-title {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 60px 0;
+  }
+  .skills .container {
+    padding: 0 16px;
+  }
+  .skills-header {
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-size: clamp(1.4rem, 6vw, 1.8rem) !important;
+  }
+  .section-subtitle {
+    font-size: 0.85rem;
+  }
+  .nav-share-btn {
+    max-width: 100%;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    min-width: unset;
+  }
+  .video-card {
+    aspect-ratio: 16 / 9;
+  }
+  .play-button {
+    width: 48px;
+    height: 48px;
+  }
+  .close-btn {
+    width: 32px;
+    height: 32px;
+    top: 8px;
+    right: 8px;
+  }
+  .fullscreen-btn {
+    width: 32px;
+    height: 32px;
+    bottom: 8px;
+    right: 8px;
+  }
+  .social-text {
+    font-size: 0.95rem;
+  }
+  .social-link {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+}
 /* Responsive */
 @media (max-width: 768px) {
   .skills {

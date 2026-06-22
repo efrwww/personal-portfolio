@@ -111,3 +111,56 @@
   bottom: -100px;
   right: -100px;
 }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .benefits {
+    padding: 80px 0;
+  }
+  .benefits .container {
+    padding: 0 32px;
+  }
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3rem) !important;
+  }
+  .section-slogan {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits {
+    padding: 60px 0;
+  }
+  .benefits .container {
+    padding: 0 24px;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  .section-slogan {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits {
+    padding: 50px 0;
+  }
+  .benefits .container {
+    padding: 0 16px;
+  }
+  .section-title {
+    font-size: clamp(1.4rem, 7vw, 1.8rem) !important;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  .section-subtitle {
+    font-size: 0.85rem;
+  }
+  .section-slogan {
+    font-size: 0.9rem;
+  }
+}

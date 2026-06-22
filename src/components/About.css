@@ -399,6 +399,53 @@
   transform: translateX(4px);
 }
 
+
+@media (max-width: 600px) {
+  .category-nav {
+    grid-template-columns: 1fr !important;
+    margin-top: 80px;
+  }
+  .category-card {
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 60px 0;
+  }
+  .about-header {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
+  }
+  .about-top {
+    gap: 16px;
+  }
+  .avatar-wrapper {
+    max-width: 200px;
+  }
+  .bio-card {
+    padding: 20px;
+  }
+  .bio-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
+  .bio-card p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+  .category-nav {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+    margin-top: 60px;
+  }
+  .category-label {
+    font-size: 0.85rem;
+  }
+}
 /* Responsive */
 @media (max-width: 1000px) {
   .about-header {
