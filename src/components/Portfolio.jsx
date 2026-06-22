@@ -54,8 +54,7 @@ const Portfolio = () => {
       desc: '全画幅单反，高画质表现',
       image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1200&h=800&fit=crop',
       tags: ['单反', '全画幅'],
-      isVideo: true,
-      videoSrc: '/body-video.mp4'
+      isVideo: false
     },
     {
       id: 4,

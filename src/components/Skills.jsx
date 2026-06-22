@@ -12,12 +12,12 @@ const Skills = () => {
   // AIGC短片数据
   const aigcVideos = [
     { id: 6, title: 'AIGC短片作品一', thumbnail: '/33.jpg' },
-    { id: 66, title: 'AIGC短片作品二', thumbnail: '/44.png' }
+    { id: 'video-preview2', title: 'AIGC短片作品二', thumbnail: '/44.png' }
   ]
 
-  // AI音乐数据 - 使用21.mp4
+  // AI音乐数据 - 使用 video-preview1.mp4
   const aiMusicData = {
-    id: 21,
+    id: 'video-preview1',
     title: 'AI音乐作品',
     description: '用AI技术创作的音乐作品展示'
   }
@@ -143,7 +143,7 @@ const Skills = () => {
             <div className="music-player-container">
               <div className="music-video-wrapper">
                 <video
-                  src="/48.mp4"
+                  src="/video-preview1.mp4"
                   controls
                   autoPlay
                   playsInline
