@@ -27,7 +27,7 @@ const Hero = () => {
           loop
           playsInline
         >
-          <source src="/about-video.mp4" type="video/mp4" />
+          <source src="https://aasaca.b-cdn.net/about-video.mp4" type="video/mp4" />
         </video>
         <div className="video-overlay"></div>
       </div>

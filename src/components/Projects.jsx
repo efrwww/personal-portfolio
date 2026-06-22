@@ -90,7 +90,7 @@ const Projects = () => {
           playsInline
           onCanPlay={() => setVideoLoaded(true)}
         >
-          <source src="/y.mp4" type="video/mp4" />
+          <source src="https://aasaca.b-cdn.net/y.mp4" type="video/mp4" />
         </video>
         <div className="projects-video-overlay"></div>
       </div>

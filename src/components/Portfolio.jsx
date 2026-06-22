@@ -61,7 +61,7 @@ const Portfolio = () => {
       category: 'body',
       title: '大疆Avatar2',
       desc: '穿越机第一视角',
-      image: '/images/dji-avatar2.jpg',
+      image: 'https://aasaca.b-cdn.net/images/dji-avatar2.jpg',
       tags: ['穿越机', 'FPV']
     },
     {
@@ -69,7 +69,7 @@ const Portfolio = () => {
       category: 'result',
       title: 'D810拍摄',
       desc: '城市风光摄影作品',
-      image: '/images/result1.png',
+      image: 'https://aasaca.b-cdn.net/images/result1.png',
       tags: ['效果', '风光']
     },
     {
@@ -77,7 +77,7 @@ const Portfolio = () => {
       category: 'result',
       title: 'D810拍摄',
       desc: '人像摄影作品',
-      image: '/images/result2.png',
+      image: 'https://aasaca.b-cdn.net/images/result2.png',
       tags: ['效果', '人像']
     },
     {
@@ -85,7 +85,7 @@ const Portfolio = () => {
       category: 'summary',
       title: '尼康85定焦人像头',
       desc: '镜头类型：人像定焦',
-      image: '/images/尼康85定焦人像头.jpg',
+      image: 'https://aasaca.b-cdn.net/images/尼康85定焦人像头.jpg',
       tags: ['人像', '定焦']
     },
     {
@@ -93,7 +93,7 @@ const Portfolio = () => {
       category: 'summary',
       title: '尼康AF 80-200镜头',
       desc: '镜头类型：中长焦变焦',
-      image: '/images/尼康AF 80-200镜头.jpg',
+      image: 'https://aasaca.b-cdn.net/images/尼康AF 80-200镜头.jpg',
       tags: ['中长焦', '变焦']
     },
     {
@@ -101,7 +101,7 @@ const Portfolio = () => {
       category: 'summary',
       title: '图丽16-28超广角镜头',
       desc: '镜头类型：超广角风光',
-      image: '/images/图丽16-28超广角镜头.jpg',
+      image: 'https://aasaca.b-cdn.net/images/图丽16-28超广角镜头.jpg',
       tags: ['超广角', '风光']
     }
   ]
@@ -123,7 +123,7 @@ const Portfolio = () => {
           playsInline
           onCanPlay={() => setVideoLoaded(true)}
         >
-          <source src="/portfolio-video.mp4" type="video/mp4" />
+          <source src="https://aasaca.b-cdn.net/portfolio-video.mp4" type="video/mp4" />
         </video>
         <div className="portfolio-video-overlay"></div>
       </div>
