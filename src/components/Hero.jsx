@@ -3,14 +3,12 @@ import './Hero.css'
 import DotField from './DotField'
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
   const videoRef = useRef(null)
+  // Content visible immediately - no loading delay
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 200)
-    return () => clearTimeout(timer)
-  }, [])
 
   const scrollTo = (id) => {
     setMenuOpen(false)
@@ -21,6 +19,7 @@ const Hero = () => {
     <section className="hero">
       {/* Video Background */}
       <div className="hero-video-container">
+      <div className="hero-video-placeholder"></div>
         <video
           ref={videoRef}
           className="hero-video"
