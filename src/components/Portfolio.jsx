@@ -20,10 +20,10 @@ const Portfolio = () => {
   }, [])
 
   const filters = [
-    { id: 'video', label: '视频预览' },
-    { id: 'body', label: '机身' },
-    { id: 'result', label: '效果图' },
-    { id: 'summary', label: '总结' }
+    { id: 'video', label: '视频作品' },
+    { id: 'body', label: '相机机身' },
+    { id: 'result', label: '摄影效果' },
+    { id: 'summary', label: '镜头设备' }
   ]
 
   const projects = [
@@ -54,14 +54,15 @@ const Portfolio = () => {
       desc: '全画幅单反，高画质表现',
       image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1200&h=800&fit=crop',
       tags: ['单反', '全画幅'],
-      isVideo: false
+      isVideo: true,
+      videoSrc: '/body-video.mp4'
     },
     {
       id: 4,
       category: 'body',
       title: '大疆Avatar2',
       desc: '穿越机第一视角',
-      image: 'https://aasaca.b-cdn.net/images/dji-avatar2.jpg',
+      image: '/images/dji-avatar2.jpg',
       tags: ['穿越机', 'FPV']
     },
     {
@@ -69,7 +70,7 @@ const Portfolio = () => {
       category: 'result',
       title: 'D810拍摄',
       desc: '城市风光摄影作品',
-      image: 'https://aasaca.b-cdn.net/images/result1.png',
+      image: '/images/result1.png',
       tags: ['效果', '风光']
     },
     {
@@ -77,7 +78,7 @@ const Portfolio = () => {
       category: 'result',
       title: 'D810拍摄',
       desc: '人像摄影作品',
-      image: 'https://aasaca.b-cdn.net/images/result2.png',
+      image: '/images/result2.png',
       tags: ['效果', '人像']
     },
     {
@@ -85,7 +86,7 @@ const Portfolio = () => {
       category: 'summary',
       title: '尼康85定焦人像头',
       desc: '镜头类型：人像定焦',
-      image: 'https://aasaca.b-cdn.net/images/尼康85定焦人像头.jpg',
+      image: '/images/尼康85定焦人像头.jpg',
       tags: ['人像', '定焦']
     },
     {
@@ -93,7 +94,7 @@ const Portfolio = () => {
       category: 'summary',
       title: '尼康AF 80-200镜头',
       desc: '镜头类型：中长焦变焦',
-      image: 'https://aasaca.b-cdn.net/images/尼康AF 80-200镜头.jpg',
+      image: '/images/尼康AF 80-200镜头.jpg',
       tags: ['中长焦', '变焦']
     },
     {
@@ -101,7 +102,7 @@ const Portfolio = () => {
       category: 'summary',
       title: '图丽16-28超广角镜头',
       desc: '镜头类型：超广角风光',
-      image: 'https://aasaca.b-cdn.net/images/图丽16-28超广角镜头.jpg',
+      image: '/images/图丽16-28超广角镜头.jpg',
       tags: ['超广角', '风光']
     }
   ]
@@ -123,7 +124,7 @@ const Portfolio = () => {
           playsInline
           onCanPlay={() => setVideoLoaded(true)}
         >
-          <source src="https://aasaca.b-cdn.net/portfolio-video.mp4" type="video/mp4" />
+          <source src="/portfolio-video.mp4" type="video/mp4" />
         </video>
         <div className="portfolio-video-overlay"></div>
       </div>
@@ -131,9 +132,9 @@ const Portfolio = () => {
       <div className="container">
         <div className="portfolio-header">
           <div className="section-label">
-            <span>{activeFilter === 'summary' ? '作品集' : '设备清单'}</span>
+            <span>{activeFilter === 'summary' ? '设备清单' : '设备清单'}</span>
           </div>
-          <h2 className="section-title">{activeFilter === 'summary' ? '我的AIGC作品集' : '摄影装备'}</h2>
+          <h2 className="section-title">我的摄影设备和相关能力</h2>
         </div>
 
         {/* Filters */}

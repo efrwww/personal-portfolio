@@ -56,7 +56,7 @@ const About = () => {
           playsInline
           onCanPlay={() => setVideoLoaded(true)}
         >
-          <source src="https://aasaca.b-cdn.net/about-video.mp4" type="video/mp4" />
+          <source src="/about-video.mp4" type="video/mp4" />
         </video>
         <div className="about-video-overlay"></div>
         <div className={`about-dark-overlay ${animationPhase === 'done' ? 'visible' : ''}`}></div>
@@ -87,7 +87,7 @@ const About = () => {
               <div className="avatar-wrapper">
                 <div className="avatar-glow"></div>
                 <img
-                  src="https://aasaca.b-cdn.net/images/avatar.jpg"
+                  src="/images/avatar.jpg"
                   alt="个人照片"
                   className="avatar-img"
                 />

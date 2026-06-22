@@ -29,7 +29,7 @@ const Contact = () => {
           playsInline
           onCanPlay={() => setVideoLoaded(true)}
         >
-          <source src="https://aasaca.b-cdn.net/contact-bg.mp4" type="video/mp4" />
+          <source src="/contact-bg.mp4" type="video/mp4" />
         </video>
         <div className="contact-video-overlay"></div>
       </div>

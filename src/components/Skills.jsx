@@ -11,13 +11,13 @@ const Skills = () => {
 
   // AIGC短片数据
   const aigcVideos = [
-    { id: 6, title: 'AIGC短片作品一', thumbnail: 'https://aasaca.b-cdn.net/33.jpg' },
-    { id: 'video-preview2', title: 'AIGC短片作品二', thumbnail: 'https://aasaca.b-cdn.net/44.png' }
+    { id: 6, title: 'AIGC短片作品一', thumbnail: '/33.jpg' },
+    { id: 66, title: 'AIGC短片作品二', thumbnail: '/44.png' }
   ]
 
-  // AI音乐数据 - 使用 video-preview1.mp4
+  // AI音乐数据 - 使用21.mp4
   const aiMusicData = {
-    id: 'video-preview1',
+    id: 21,
     title: 'AI音乐作品',
     description: '用AI技术创作的音乐作品展示'
   }
@@ -67,7 +67,7 @@ const Skills = () => {
           loop
           playsInline
         >
-          <source src="https://aasaca.b-cdn.net/15.mp4" type="video/mp4" />
+          <source src="/15.mp4" type="video/mp4" />
         </video>
         <div className="skills-video-overlay"></div>
       </div>
@@ -106,7 +106,7 @@ const Skills = () => {
                     <div className={`video-player ${isFullscreen ? 'fullscreen' : ''}`}>
                       <video
                         key={`video-${video.id}`}
-                        src={`https://aasaca.b-cdn.net/${video.id}.mp4`}
+                        src={`/${video.id}.mp4`}
                         controls
                         autoPlay
                         playsInline
@@ -143,7 +143,7 @@ const Skills = () => {
             <div className="music-player-container">
               <div className="music-video-wrapper">
                 <video
-                  src="https://aasaca.b-cdn.net/video-preview1.mp4"
+                  src="/611.mp4"
                   controls
                   autoPlay
                   playsInline
@@ -163,7 +163,7 @@ const Skills = () => {
         {/* Social Links Section - 仅在没有展开内容时显示 */}
         {!expandedTab && (
           <div className="social-links-section">
-            <img src="https://aasaca.b-cdn.net/99.png" alt="社交媒体" className="social-image" />
+            <img src="/99.png" alt="社交媒体" className="social-image" />
             <p className="social-text">观看完整短片可以进我抖音——不止ai，更有"爱"</p>
             <a href="https://qishui.douyin.com/s/iQv2K6Fj/" target="_blank" rel="noopener noreferrer" className="social-link douyin-link">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">

@@ -29,7 +29,7 @@ const Benefits = () => {
           playsInline
           onCanPlay={() => setVideoLoaded(true)}
         >
-          <source src="https://aasaca.b-cdn.net/100.mp4" type="video/mp4" />
+          <source src="/100.mp4" type="video/mp4" />
         </video>
         <div className="benefits-video-overlay"></div>
       </div>
