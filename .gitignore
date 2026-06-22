@@ -27,3 +27,5 @@ npm-debug.log*
 # API (已移动到根目录)
 # api/ (如果需要单独部署后端)
 21.mp4
+
+.vercel
