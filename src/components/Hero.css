@@ -441,6 +441,22 @@
   }
 }
 
+
+@media (max-width: 767px) {
+  .hero-video-container {
+    background-image: url('/33.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-video {
+    display: none;
+  }
+
+  .hero-video-placeholder {
+    display: none;
+  }
+}
 /* Hamburger Menu Button */
 .nav-container {
   position: relative;
