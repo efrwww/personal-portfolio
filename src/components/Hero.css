@@ -447,6 +447,7 @@
     background-image: url('/33.jpg');
     background-size: cover;
     background-position: center;
+    /* Fade in image over gradient */
   }
 
   .hero-video {
