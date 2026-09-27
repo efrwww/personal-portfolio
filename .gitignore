@@ -29,3 +29,20 @@ npm-debug.log*
 21.mp4
 
 .vercel
+
+# Wonder Forge specific
+wonder-forge/server/.env
+wonder-forge/server/public/generated/
+wonder-forge/server/public/uploads/
+wonder-forge/data/community.json
+wonder-forge/.edge-profile*/
+wonder-forge/.edge-cdp*/
+wonder-forge/.edge-white-*/
+wonder-forge/web/dist/
+wonder-forge/.temp/
+
+# Edge browser debug profiles (root level)
+.edge-cdp*/
+.edge-cdp*/
+.edge-profile*/
+.edge-white-*/
