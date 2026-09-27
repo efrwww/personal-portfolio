@@ -41,8 +41,7 @@ wonder-forge/.edge-white-*/
 wonder-forge/web/dist/
 wonder-forge/.temp/
 
-# Edge browser debug profiles (root level)
-.edge-cdp*/
-.edge-cdp*/
-.edge-profile*/
-.edge-white-*/
+# Root-level leftovers (not part of portfolio or wonder-forge)
+.temp/
+server/
+data/community.json
